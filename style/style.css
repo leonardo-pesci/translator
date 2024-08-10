@@ -1,14 +1,151 @@
+/* ^ General */
 * {
     box-sizing: border-box;
     padding: auto;
     margin: auto;
 }
 
+:root {
+    --color-text: #000000;
+    --color-title: #ffffff;
+    --color-bg: #eaedf0;
+    --color-1: #4c64f2;
+    --color-2: #80b0ff;
+}
+
+body {
+    color: var(--color-title);
+    background-color: var(--color-bg);
+    font-family: "Poppins", sans-serif;
+}
 
 
-/* 
-  bg-color: rgb(234 237 240)
-  text-color: black
-  blue: rgb(76 100 242)
-  light-blue: rgb(128 176 255)
-*/
+
+/* ^ Utilities */
+.hidden {
+    display: none;
+}
+
+.fitImg {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+
+
+/* ^ Main */
+#container {
+    max-width: 560px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.card {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+
+/* ^ Header */
+#headerBlock {
+    color: var(--color-white);
+    background-color: var(--color-1);
+    font-size: 32px;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+/* ^ Display */
+#displayBlock {
+    height: 200px;
+    background-color: var(--color-2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+
+.icon {
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#flag {
+    left: 10px;
+}
+
+#flagText {
+    font-size: 30px;
+}
+
+#clearBtn {
+    right: 10px;
+    background-color: transparent;
+    border: 0;
+}
+
+#clearBtnText {
+    font-size: 20px;
+    color: var(--color-red);
+}
+
+#translationText {
+    font-size: 24px;
+}
+
+
+
+/* ^ Interface */
+#interfaceBlock {
+    background-color: var(--color-1);
+}
+
+#inputText {
+    font-family: "Poppins", sans-serif;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#buttonBlock {
+    display: flex;
+    gap: 15px;
+    margin: 0 auto;
+}
+
+.buttonLang {
+    width: 60px;
+    height: 60px;
+    background-color: var(--color-2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.buttonLang span {
+    font-size: 40px;
+}

@@ -1,5 +1,9 @@
 //^ Elements
-
+const flagText = document.querySelector('#flagText')
+const clearBtn = document.querySelector('#clearBtn')
+const translationText = document.querySelector('#translationText')
+const inputText = document.querySelector('#inputText')
+const langBtns = document.querySelector('.langBtn')
 
 
 
@@ -20,19 +24,6 @@
 
 // todo
 /* 
-ZIP Extractor
-ZIP Extractor
-Free app for opening and creating ZIP files
-Leonardo
-Google Account
-▾ ADVERTISEMENT ▾
-arrow_back
-traduttore.zip
-code Highlight Syntax
-skip_previous skip_next close
-code
-script.js (2 KB)
-file_download Download Save to Drive Save to Drive more_vert
 const langButtons = document.querySelectorAll('.lang-button');
 const textInput = document.querySelector('.text-input');
 const translationText = document.querySelector('.translation-text');
