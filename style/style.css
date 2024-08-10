@@ -135,17 +135,14 @@ body {
     margin: 0 auto;
 }
 
-.buttonLang {
+.langBtn {
     width: 60px;
     height: 60px;
+    font-size: 32px;
     background-color: var(--color-2);
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
     cursor: pointer;
-}
-
-.buttonLang span {
-    font-size: 40px;
 }

@@ -3,33 +3,53 @@ const flagText = document.querySelector('#flagText')
 const clearBtn = document.querySelector('#clearBtn')
 const translationText = document.querySelector('#translationText')
 const inputText = document.querySelector('#inputText')
-const langBtns = document.querySelector('.langBtn')
-
-
-
-//^ Variables
-
-
-
+const langBtns = document.querySelectorAll('.langBtn')
 
 //^ Functions
+let reset = () => {
+    flagText.innerText = ''
+    inputText.value = ''
+    translationText.innerText = 'La traduzione apparirà qui'
+    inputText.focus()
+}
 
+let langBtnFunction = (langBtn) => {
+    let lang = langBtn.dataset.name
+    let text = inputText.value.trim()
+    let flag = langBtn.innerText
+
+    inputText.focus()
+    
+    if (text.length > 0) translate(text, lang, flag)
+}
+
+let translate = async (text, lang, flag) => {
+    const url = `https://api.mymemory.translated.net/get?q=${text}&langpair=it|${lang}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    const result = data.responseData.translatedText;
+
+    translationText.innerText = result
+    flagText.innerText = flag
+}
+
+inputText.focus()
 
 
 
 //^ Events
+clearBtn.addEventListener('click', reset)
 
+langBtns.forEach( (langBtn) => {
+    langBtn.addEventListener('click', () => {
+        langBtnFunction(langBtn)
+    })
+})
 
 
 
 // todo
 /* 
-const langButtons = document.querySelectorAll('.lang-button');
-const textInput = document.querySelector('.text-input');
-const translationText = document.querySelector('.translation-text');
-const translationFlag = document.querySelector('.translation-flag');
-const resetButton = document.querySelector('.reset-button');
-
 function reset() {
   textInput.value = '';
   translationText.innerText = 'Traduzione';
